@@ -67,7 +67,7 @@ minikube dashboard
 ```
 
 
-![kubernetes](assets/imagem15.png)
+
 
 
 Abra o terminal na pasta kubernetes e execute o comando abaixo para expor o Adminer na porta 8090:
@@ -81,7 +81,7 @@ kubectl port-forward svc/adminer 8090:8080
 
 Acesse o Adminer no browser: http://localhost:8090/
 
-![sql](assets/imagem14.png)
+
 
 
 ```
