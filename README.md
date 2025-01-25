@@ -1,10 +1,10 @@
-# techChallenge FIAP - G24 FASE 2
+# Hackaton FIAP - G24 FASE 5
 
-API desenvolvida para controle de pedidos de uma lanchonete utilizando Kubernetes e refatoração do código seguindo padrões clean code.
+API desenvolvida para autenticar usuarios no sistema de processamento de imagens
 
 
-- Miro: [Dashboard Miro](https://miro.com/app/board/uXjVKQl5ank=/?share_link_id=2259608060)
-- Vídeo: https://www.youtube.com/watch?v=9si3VwYQDNg
+
+- Vídeo: 
 
 
 ## Grupo 24 - Integrantes
@@ -22,7 +22,7 @@ Cesar P Moroni RM355921</br>
 
 Desenho com detalhes da infraestrutura do software
 
-![Arquitetura](assets/diagrama.png)
+
 
 
 
@@ -88,12 +88,12 @@ Acesse o Adminer no browser: http://localhost:8090/
 Servidor: sqlserver
 Usuário: SA
 Senha: YourStrong!Passw0rd
-Base de Dados: LancheRapidoBD
+Base de Dados: HackatonBD
 
 ```
 Importe o arquivo scriptInserts.sql que esta na pasta API e clique em executar.
 
-![adminer](assets/imagem16.png)
+
  
 </br>
 <b>Como acessar a API</b>:
@@ -111,51 +111,6 @@ kubectl port-forward svc/app 8080:80
 <b>API</b>: http://localhost:8080/swagger/index.html
 </br>
 
-![Swagger](assets/imagem1.png)
-
-
-
-No endpoint GET/pedidos, já existe alguns pedidos criados para testes</br>
-Liste todos os pedidos realizadose escolha um idPedido com o status RECEBIDO.
-
-
-![Swagger](assets/imagem2.png)</br>
-![Swagger](assets/imagem3.png)
-
-
-
-## Obtenha o QRCode para pagamento do pedido no Mercado Pago.
-
-Crie um pagamento para um pedido que esteja com o status RECEBIDO.
-![Swagger](assets/imagem4.png)
-
-
-Obtenha o QRCode para pagamento do pedido no Mercado Pago.
-
-![Swagger](assets/imagem5.png)
-
-Acesse o site https://www.qrcode-monkey.com/ e gere a imagem utilizando o QR Code obtido no campo qr_data. Na página, selecione a aba TEXT, cole o QR Code no campo Your Text e clique no botão Create QR Code para criar a imagem correspondente.
-
-![QrCode](assets/imagem6.png)
-![QrCode](assets/imagem7.png)
-
-Ao ler  o qrCode no app do mercado pago
-
-![QrCode](assets/imagem8.png)</br>
-
-Concluindo o pagamento
-![QrCode](assets/imagem9.png)</br>
-![QrCode](assets/imagem10.png)
-
-
-Verifique a notificação recebida no Webhook.site e copie o id da merchant_order.
-
-![webhook](assets/imagem11.png)</br>
-![webhook](assets/imagem12.png)
-
-Verifique novamente o status do pagamento do pedido como Aprovado.
-
-![webhook](assets/imagem13.png)
 
 </br>
 </br>
