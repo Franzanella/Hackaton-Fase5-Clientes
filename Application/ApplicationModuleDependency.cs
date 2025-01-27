@@ -8,10 +8,10 @@ namespace Application
     {
         public static void AddApplicationModule(this IServiceCollection services)
         {
-            
+
             services.AddTransient<IUsuariosAppService, UsuariosAppService>();
-            
-            
+
+
 
         }
     }

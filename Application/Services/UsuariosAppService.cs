@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Threading.Tasks;
 using Application.Interfaces;
 using Application.ViewModel.Request;
@@ -6,7 +7,6 @@ using Application.ViewModel.Response;
 using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using System.Text;
 using Microsoft.AspNetCore.Identity.Data;
 
 namespace Application.Services
@@ -20,10 +20,10 @@ namespace Application.Services
             _usuarioRepository = usuarioRepository;
         }
 
-        
+
         private string GeneratePasswordHash(string password, string salt)
         {
-            
+
             return Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: password,
                 salt: Encoding.UTF8.GetBytes(salt),
@@ -32,7 +32,7 @@ namespace Application.Services
                 numBytesRequested: 256 / 8));
         }
 
-        
+
         private bool VerifyPasswordHash(string password, string salt, string storedHash)
         {
             var hash = GeneratePasswordHash(password, salt);
@@ -41,7 +41,7 @@ namespace Application.Services
 
         public async Task<UsuarioByIdRequest> PostUsuarios(UsuariosResquest filtro)
         {
-            var salt = Guid.NewGuid().ToString(); 
+            var salt = Guid.NewGuid().ToString();
             var passwordHash = GeneratePasswordHash(filtro.Senha, salt);
 
             var usuario = new Usuario(
@@ -49,7 +49,7 @@ namespace Application.Services
                 filtro.Email,
                 filtro.Login,
                 passwordHash,
-                salt 
+                salt
             );
 
             await _usuarioRepository.PostUsuario(usuario);
