@@ -10,5 +10,7 @@ namespace Domain.Interfaces
 
         Task<Usuario> GetUsuario(int idUsuario);
 
+        Task<Usuario> ObterPorLogin(string login);
+
     }
 }

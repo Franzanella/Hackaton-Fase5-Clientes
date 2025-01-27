@@ -5,7 +5,6 @@ using Application.Interfaces;
 using Application.ViewModel.Request;
 using Application.ViewModel.Response;
 using Domain.Base;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -43,7 +42,7 @@ namespace Api.Controllers
          Tags = new[] { "Usuarios" }
      )]
         [Consumes("application/json")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] Application.ViewModel.Request.LoginRequest request)
         {
             try
             {
