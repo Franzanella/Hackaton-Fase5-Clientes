@@ -28,6 +28,10 @@ namespace Infra.Repositories
             return await _dbContext.Usuarios.FirstOrDefaultAsync(c => c.IdUsuario == idUsuario);
         }
 
+        public async Task<Usuario> ObterPorLogin(string login)
+        {
+            return await _dbContext.Usuarios.FirstOrDefaultAsync(u => u.Login == login);
+        }
 
     }
 }

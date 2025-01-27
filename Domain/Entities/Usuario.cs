@@ -1,7 +1,7 @@
-﻿using Domain.Base;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Base;
 
 namespace Domain.Entities
 {

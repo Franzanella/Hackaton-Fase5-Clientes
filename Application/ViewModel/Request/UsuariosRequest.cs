@@ -12,7 +12,7 @@ namespace Application.ViewModel.Request
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-           
+
 
             if (string.IsNullOrWhiteSpace(Nome))
             {
@@ -21,7 +21,8 @@ namespace Application.ViewModel.Request
                     new[] { nameof(Nome) }
                 );
             }
-            if (string.IsNullOrWhiteSpace(Email)) {
+            if (string.IsNullOrWhiteSpace(Email))
+            {
                 yield return new ValidationResult(
                        "O Email nao deve ser estar vazio .",
                        new[] { nameof(Email) }

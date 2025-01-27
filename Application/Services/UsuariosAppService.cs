@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Application.Interfaces;
 using Application.ViewModel.Request;
@@ -6,24 +9,27 @@ using Application.ViewModel.Response;
 using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using System.Text;
-using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Application.Services
 {
     public class UsuariosAppService : IUsuariosAppService
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IConfiguration _config;
 
-        public UsuariosAppService(IUsuarioRepository usuarioRepository)
+        public UsuariosAppService(IUsuarioRepository usuarioRepository, IConfiguration config)
         {
             _usuarioRepository = usuarioRepository;
+            _config = config;
+
         }
 
-        
+
         private string GeneratePasswordHash(string password, string salt)
         {
-            
+
             return Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: password,
                 salt: Encoding.UTF8.GetBytes(salt),
@@ -32,7 +38,7 @@ namespace Application.Services
                 numBytesRequested: 256 / 8));
         }
 
-        
+
         private bool VerifyPasswordHash(string password, string salt, string storedHash)
         {
             var hash = GeneratePasswordHash(password, salt);
@@ -41,7 +47,7 @@ namespace Application.Services
 
         public async Task<UsuarioByIdRequest> PostUsuarios(UsuariosResquest filtro)
         {
-            var salt = Guid.NewGuid().ToString(); 
+            var salt = Guid.NewGuid().ToString();
             var passwordHash = GeneratePasswordHash(filtro.Senha, salt);
 
             var usuario = new Usuario(
@@ -49,7 +55,7 @@ namespace Application.Services
                 filtro.Email,
                 filtro.Login,
                 passwordHash,
-                salt 
+                salt
             );
 
             await _usuarioRepository.PostUsuario(usuario);
@@ -70,7 +76,46 @@ namespace Application.Services
 
         public async Task<LoginResponse> Authenticate(LoginRequest request)
         {
-            return null;
+            var usuario = await _usuarioRepository.ObterPorLogin(request.Login);
+
+            if (usuario == null || !VerifyPasswordHash(request.Senha, usuario.Salt, usuario.Senha))
+            {
+                return null;
+            }
+
+            var token = GerarToken(usuario);
+
+            return new LoginResponse
+            {
+                Nome = usuario.Nome,
+                Email = usuario.Email,
+                Token = token
+            };
         }
-    }
+
+        private string GerarToken(Domain.Entities.Usuario usuario)
+        {
+            var chaveSecreta = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);
+            var credenciais = new SigningCredentials(new SymmetricSecurityKey(chaveSecreta), SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, usuario.IdUsuario.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            };
+
+            var token = new JwtSecurityToken(
+                issuer: _config["Jwt:Issuer"],
+                audience: _config["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddHours(2),
+                signingCredentials: credenciais
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+    
+
+}
 }

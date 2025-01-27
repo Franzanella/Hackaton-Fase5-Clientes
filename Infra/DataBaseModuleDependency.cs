@@ -9,8 +9,8 @@ namespace Infra
         public static void AddDataBaseModule(this IServiceCollection services)
         {
             services.AddScoped<IUsuarioRepository, UsuariosRepository>();
-            
-            
+
+
         }
     }
 }

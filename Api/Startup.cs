@@ -1,5 +1,7 @@
+using System;
 using App.Api.Configurations;
 using Application;
+using Infra;
 using Infra.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,8 +12,6 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using System;
-using Infra;
 namespace Api
 {
     public class Startup
@@ -88,7 +88,7 @@ namespace Api
                 config.SwaggerEndpoint("/api/v1/swagger.json", "API Usuarios v1");
                 config.RoutePrefix = "swagger";
             });
-            
+
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,3 @@
-using System;
 using Domain.Entities;
 
 namespace Application.ViewModel.Response
@@ -22,6 +21,6 @@ namespace Application.ViewModel.Response
         public string Senha { get; set; }
         public string DataCadastro { get; set; }
 
-    
+
     }
 }
