@@ -1,6 +1,6 @@
-# TechChallenge-Grupo24-Produto
+# Hackaton-Grupo24-Cliente
 
-Este repositório é dedicado ao microsserviço de clientes. Neste foi utilizado o mysql no RDS como banco de dados
+Este repositório é dedicado a API de clientes. Neste foi utilizado o mysql como banco de dados
 
 O deploy deste foi feito Utilizando aws Lambda - serveless
 análise de código e cobertura de testes utilizando SonarCloud são realizados via Github Actions.
@@ -23,18 +23,17 @@ Quando disparamos a Github Action, é realizado o build da aplicação e deploy 
 Desenho com detalhes da infraestrutura do software
 
 
-![image1](/assets/arquitetura.png)
 
-Para este microsserviço, utilizamos .NET 8.0
+Para essa API, utilizamos .NET 8.0
 
 ## Testes
 
 Utilizamos a ferramenta SonarCloud para análise de código e cobertura de testes. Para este microsserviço, atingimos acima de 80% de cobertura, conforme abaixo:
 
-https://sonarcloud.io/summary/overall?id=fiap-04_produtos
+https://sonarcloud.io/summary/overall?id=fiap-05_clientes
 
 
-![image1](/assets/cobertura.png)
+
 
 ## BDD 
 Utilizamos BDD para buscar um cliente: 
