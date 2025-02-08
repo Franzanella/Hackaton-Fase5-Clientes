@@ -2,7 +2,7 @@ name: SonarQube Cloud
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -48,6 +48,7 @@ jobs:
         run: |
           dotnet tool install --global dotnet-coverage
           .\..\.sonar\scanner\dotnet-sonarscanner begin /k:"Franzanella_Hackaton-Fase5-Clientes" /o:"franzanella" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml /d:sonar.exclusions="**/*test*.cs"
-          dotnet build App.sln --configuration Release --no-incremental          
+          ls -R
+          dotnet build src/App.sln --configuration Release --no-incremental        
           dotnet-coverage collect "dotnet test" -f xml -o "coverage.xml"          
           .\..\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
