@@ -30,15 +30,17 @@ Para essa API, utilizamos .NET 8.0
 
 Utilizamos a ferramenta SonarCloud para análise de código e cobertura de testes. Para este microsserviço, atingimos acima de 80% de cobertura, conforme abaixo:
 
-https://sonarcloud.io/summary/overall?id=fiap-05_clientes
+https://sonarcloud.io/summary/overall?id=Franzanella_Hackaton-Fase5-Clientes&branch=main
 
 ![image1](/assets/cobertTest.png)
 
 ![image2](/assets/cobertura.png)
 
-![image1](/assets/teste.png)
+![image3](/assets/cobertura2.png)
+
+![image4](/assets/teste.png)
 
 ## BDD 
 Utilizamos BDD para buscar um cliente: 
 
-![image3](/assets/bdd.png)
+![image5](/assets/bdd.png)
