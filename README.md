@@ -22,6 +22,12 @@ Cesar P Moroni RM355921</br>
 Quando disparamos a Github Action, é realizado o build da aplicação e deploy na LAMBDA .
 Desenho com detalhes da infraestrutura do software
 
+![image6](/assets/Arquitetura.png)
+
+
+## Tabela banco de dados MySql
+
+![image7](/assets/bd.png) 
 
 
 Para essa API, utilizamos .NET 8.0
