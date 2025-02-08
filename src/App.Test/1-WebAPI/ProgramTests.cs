@@ -1,11 +1,11 @@
+using System.Net;
+using System.Threading.Tasks;
 using App.Application.Interfaces;
 using Application.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
-using System.Net;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace APICliente.Tests

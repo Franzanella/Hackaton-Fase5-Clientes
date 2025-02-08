@@ -1,16 +1,14 @@
-﻿using App.Application.ViewModels.Request;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using App.Application.ViewModels.Request;
 using App.Application.ViewModels.Response;
 using App.Domain.Interfaces;
 using App.Domain.Models;
 using Application.Services;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace App.Tests.Services

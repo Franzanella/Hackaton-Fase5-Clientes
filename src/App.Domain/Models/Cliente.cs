@@ -1,5 +1,5 @@
-﻿using App.Domain.Validations;
-using System;
+﻿using System;
+using App.Domain.Validations;
 
 namespace App.Domain.Models
 {

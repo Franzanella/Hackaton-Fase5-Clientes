@@ -6,7 +6,6 @@ using Application.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 
 namespace App.Infra.CrossCutting.IoC

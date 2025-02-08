@@ -1,14 +1,14 @@
-﻿using App.Application.Interfaces;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using App.Application.Interfaces;
 using App.Application.ViewModels.Request;
+using App.Application.ViewModels.Response;
 using App.Domain.Interfaces;
 using App.Domain.Models;
-using System.Text;
-using System;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
-using App.Application.ViewModels.Response;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Application.Services

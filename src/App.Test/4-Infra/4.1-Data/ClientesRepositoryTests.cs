@@ -1,8 +1,8 @@
-﻿using App.Domain.Interfaces;
+﻿using System.Threading.Tasks;
+using App.Domain.Interfaces;
 using App.Domain.Models;
 using App.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace App.Tests.Repositories

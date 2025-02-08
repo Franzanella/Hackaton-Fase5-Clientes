@@ -1,10 +1,10 @@
-﻿using Api.Middleware;
-using Microsoft.AspNetCore.Http;
-using Moq;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading.Tasks;
+using Api.Middleware;
+using Microsoft.AspNetCore.Http;
+using Moq;
 using Xunit;
 
 public class ExceptionMiddlewareTests

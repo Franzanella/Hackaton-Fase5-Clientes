@@ -1,9 +1,7 @@
-using TechTalk.SpecFlow;
 using Api.Controllers;
 using App.Application.Interfaces;
 using App.Application.ViewModels.Response;
 using App.Domain.Models;
-using Microsoft.AspNetCore.Mvc;
 using Moq;
 
 namespace App.BDD.StepDefinitions

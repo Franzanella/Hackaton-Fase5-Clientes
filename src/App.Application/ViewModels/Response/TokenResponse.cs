@@ -1,4 +1,3 @@
-using App.Domain.Models;
 using System;
 
 namespace App.Application.ViewModels.Response

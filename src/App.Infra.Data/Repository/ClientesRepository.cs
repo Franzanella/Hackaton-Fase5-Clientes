@@ -1,7 +1,7 @@
-﻿using App.Domain.Models;
+﻿using System.Threading.Tasks;
+using App.Domain.Models;
 using App.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace App.Domain.Interfaces
 {

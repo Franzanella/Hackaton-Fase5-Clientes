@@ -1,13 +1,13 @@
-﻿using Api.Controllers;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
+using Api.Controllers;
 using App.Application.Interfaces;
 using App.Application.ViewModels.Request;
 using App.Application.ViewModels.Response;
 using App.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System.Collections.Generic;
-using System.Net;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace App.Test._1_WebAPI.Controllers

@@ -1,11 +1,11 @@
-﻿using App.Application.Interfaces;
+﻿using System.Collections.Generic;
+using System.Linq;
+using App.Application.Interfaces;
 using App.Domain.Interfaces;
 using App.Infra.CrossCutting.IoC;
 using App.Test.Configurations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace App.Test._4_Infra._4._2___CrossCutting

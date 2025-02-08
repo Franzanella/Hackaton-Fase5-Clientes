@@ -1,5 +1,5 @@
-﻿using App.Domain.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using App.Domain.Models;
 
 namespace App.Domain.Interfaces
 {

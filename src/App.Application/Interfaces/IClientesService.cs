@@ -1,6 +1,6 @@
-﻿using App.Application.ViewModels.Request;
+﻿using System.Threading.Tasks;
+using App.Application.ViewModels.Request;
 using App.Application.ViewModels.Response;
-using System.Threading.Tasks;
 
 namespace App.Application.Interfaces
 {

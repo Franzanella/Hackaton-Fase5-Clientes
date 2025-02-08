@@ -1,6 +1,6 @@
-﻿using AutoFixture;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
+using AutoFixture;
 
 namespace App.Test.MockObjects
 {

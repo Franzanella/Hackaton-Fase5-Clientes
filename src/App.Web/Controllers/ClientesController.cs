@@ -1,11 +1,9 @@
-using Amazon.S3.Model;
+using System.Net;
 using App.Application.Interfaces;
 using App.Application.ViewModels.Request;
 using App.Application.ViewModels.Response;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using System.Net;
 
 namespace Api.Controllers
 {

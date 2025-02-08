@@ -1,7 +1,5 @@
-﻿using App.Domain.Models;
-using App.Domain.Validations;
-using Moq;
-using System;
+﻿using System;
+using App.Domain.Models;
 using Xunit;
 
 namespace App.Domain.Tests

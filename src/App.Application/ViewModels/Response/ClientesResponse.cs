@@ -1,5 +1,5 @@
-using App.Domain.Models;
 using System;
+using App.Domain.Models;
 
 namespace App.Application.ViewModels.Response
 {
