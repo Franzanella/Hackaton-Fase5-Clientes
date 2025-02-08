@@ -32,10 +32,13 @@ Utilizamos a ferramenta SonarCloud para análise de código e cobertura de teste
 
 https://sonarcloud.io/summary/overall?id=fiap-05_clientes
 
+![image1](/assets/cobertTest.png)
 
+![image2](/assets/cobertura.png)
 
+![image1](/assets/teste.png)
 
 ## BDD 
 Utilizamos BDD para buscar um cliente: 
 
-![image1](/assets/bdd.png)
+![image3](/assets/bdd.png)
