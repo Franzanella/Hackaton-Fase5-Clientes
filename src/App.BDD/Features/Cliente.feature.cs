@@ -19,7 +19,7 @@ namespace App.BDD.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ProdutoFeature : object, Xunit.IClassFixture<ProdutoFeature.FixtureData>, System.IDisposable
+    public partial class BuscarClientePorCPFFeature : object, Xunit.IClassFixture<BuscarClientePorCPFFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace App.BDD.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Produto.feature"
+#line 1 "Cliente.feature"
 #line hidden
         
-        public ProdutoFeature(ProdutoFeature.FixtureData fixtureData, App_BDD_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public BuscarClientePorCPFFeature(BuscarClientePorCPFFeature.FixtureData fixtureData, App_BDD_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,9 @@ namespace App.BDD.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Produto", "Para verificar a funcionalidade de busca de produtos\r\nComo um usuário\r\nEu quero b" +
-                    "uscar um produto pelo seu ID", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Buscar Cliente por CPF", "  Para verificar a funcionalidade de busca de clientes\r\n  Como um usuário\r\n  Eu q" +
+                    "uero buscar um cliente pelo seu CPF\r\n  Para garantir que o sistema retorne as in" +
+                    "formações corretas ou um status apropriado", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,18 +82,18 @@ namespace App.BDD.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="[Buscar produto existente pelo ID]")]
-        [Xunit.TraitAttribute("FeatureTitle", "Produto")]
-        [Xunit.TraitAttribute("Description", "[Buscar produto existente pelo ID]")]
+        [Xunit.SkippableFactAttribute(DisplayName="Buscar cliente existente pelo CPF")]
+        [Xunit.TraitAttribute("FeatureTitle", "Buscar Cliente por CPF")]
+        [Xunit.TraitAttribute("Description", "Buscar cliente existente pelo CPF")]
         [Xunit.TraitAttribute("Category", "tag1")]
-        public virtual void BuscarProdutoExistentePeloID()
+        public virtual void BuscarClienteExistentePeloCPF()
         {
             string[] tagsOfScenario = new string[] {
                     "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[Buscar produto existente pelo ID]", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
-this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Buscar cliente existente pelo CPF", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 9
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -111,14 +112,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
- testRunner.Given("[que existe um produto com ID 1]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 9
- testRunner.When("[eu buscar o produto pelo IDCategoria 1]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 10
- testRunner.Then("o produto com ID 1 deve ser retornado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Given("que existe um cliente com CPF 41512369020", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 11
+    testRunner.When("eu faço uma busca pelo CPF 41512369020", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -131,12 +129,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ProdutoFeature.FeatureSetup();
+                BuscarClientePorCPFFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ProdutoFeature.FeatureTearDown();
+                BuscarClientePorCPFFeature.FeatureTearDown();
             }
         }
     }

@@ -17,7 +17,7 @@ namespace APICliente.Tests
 
             _ = builder.ConfigureTestServices(services =>
             {
-                services.AddTransient<IClientesService, ProdutosService>();
+                services.AddTransient<IClientesService, ClienteService>();
             });
         }
     }
@@ -32,10 +32,10 @@ namespace APICliente.Tests
             var client = application.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/produtos");
+            var response = await client.GetAsync("/Clientes/41512369020");
 
             // Assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
     }
 

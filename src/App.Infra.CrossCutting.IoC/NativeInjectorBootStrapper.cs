@@ -24,12 +24,6 @@ namespace App.Infra.CrossCutting.IoC
                    S3Secret = config["AWS_SECRET_ACCESS_KEY"]
                });
 
-            services.AddSingleton<RabbitMQConfig>(_ =>
-            new RabbitMQConfig
-            {
-                Uri = new Uri(config["UrlRabbit"]),
-
-            });
 
 
             ////=======================================================================

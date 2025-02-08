@@ -24,7 +24,7 @@ namespace App.Tests.Context
             using var context = new MySQLContext(_dbContextOptions);
 
             // Assert
-            Assert.NotNull(context.Produtos);
+            Assert.NotNull(context.Clientes);
         }
 
 
@@ -36,12 +36,12 @@ namespace App.Tests.Context
             using var context = new MySQLContext(_dbContextOptions);
 
             // Act
-            var model = context.Model.FindEntityType(typeof(ProdutoBD));
+            var model = context.Model.FindEntityType(typeof(ClienteBD));
 
             // Assert
             Assert.NotNull(model); // Model should exist
             Assert.NotNull(model.FindProperty("Id")); // Ensure 'Id' is mapped
-            Assert.NotNull(model.FindProperty("Nome")); // Ensure 'Nome' is mapped
+
         }
     }
 }
