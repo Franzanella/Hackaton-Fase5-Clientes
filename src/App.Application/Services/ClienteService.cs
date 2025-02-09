@@ -16,7 +16,8 @@ namespace Application.Services
     public class ClienteService : IClientesService
     {
         private readonly IClientesRepository _repository;
-        private static readonly string _secretKey = GenerateSecretKey();
+        private static readonly string _secretKey = Convert.ToBase64String(Encoding.UTF8.GetBytes("MINHA_CHAVE_SECRETA_FIXA"));
+
 
         public ClienteService(IClientesRepository repository)
         {
@@ -79,14 +80,10 @@ namespace Application.Services
         }
 
 
-        private static string GenerateSecretKey()
-        {
-            byte[] keyBytes = RandomNumberGenerator.GetBytes(32);
-            return Convert.ToBase64String(keyBytes);
-        }
+
         private TokenResponse GerarTokenJwt(ClienteBD cliente)
         {
-            var key = new SymmetricSecurityKey(Convert.FromBase64String(_secretKey));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey)); // CORRIGIDO
             var credentials = new SigningCredentials(key, Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256);
 
             var expiracao = DateTime.UtcNow.AddHours(1);
@@ -110,6 +107,7 @@ namespace Application.Services
                 DataHoraExpiracao = expiracao
             };
         }
+
         #endregion
     }
 }

@@ -23,6 +23,12 @@ namespace App.Infra.CrossCutting.IoC
                    S3Secret = config["AWS_SECRET_ACCESS_KEY"]
                });
 
+            services.AddSingleton<Jwt>(_ =>
+     new Jwt
+     {
+         jwt = "MINHA_CHAVE_SECRETA_FIXA" // Defina sua chave JWT fixa aqui
+     });
+
 
 
             ////=======================================================================

@@ -17,7 +17,7 @@ namespace App.Tests.Services
     {
         private readonly Mock<IClientesRepository> _mockRepository;
         private readonly ClienteService _service;
-        public readonly string _fakeSecretKey;
+        public readonly string _fakeSecretKey = "MINHA_CHAVE_SECRETA_FIXA";
 
         public ClientesServiceTests()
         {
