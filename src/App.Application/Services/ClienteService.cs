@@ -83,10 +83,10 @@ namespace Application.Services
 
         private TokenResponse GerarTokenJwt(ClienteBD cliente)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey)); // CORRIGIDO
-            var credentials = new SigningCredentials(key, Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256);
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var expiracao = DateTime.UtcNow.AddHours(1);
+            var expiracao = DateTime.UtcNow.AddDays(30);
 
             var token = new JwtSecurityToken(
                 issuer: "AppAPI",
@@ -103,7 +103,7 @@ namespace Application.Services
             return new TokenResponse
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
-                DuracaoToken = (int)TimeSpan.FromHours(1).TotalSeconds,
+                DuracaoToken = (int)TimeSpan.FromDays(30).TotalSeconds,
                 DataHoraExpiracao = expiracao
             };
         }

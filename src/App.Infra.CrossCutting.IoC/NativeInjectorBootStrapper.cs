@@ -26,7 +26,7 @@ namespace App.Infra.CrossCutting.IoC
             services.AddSingleton<Jwt>(_ =>
      new Jwt
      {
-         jwt = "MINHA_CHAVE_SECRETA_FIXA" // Defina sua chave JWT fixa aqui
+         jwt = "MINHA_CHAVE_SECRETA_FIXA"
      });
 
 
